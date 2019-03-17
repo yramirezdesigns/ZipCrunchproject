@@ -9,15 +9,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6YVIuEd-kLyPvEHqlevxoet8_Bk5TIQE&libraries=places"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
-        <!-- Add additional services that you want to use -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>        <!-- Add additional services that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-functions.js"></script>
+    <script src="assets/javascript/app_newcodebase.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6YVIuEd-kLyPvEHqlevxoet8_Bk5TIQE&libraries=places" async defer></script>
+
+
     <title>ZipCrunch</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -46,9 +50,9 @@
                                     <form action="/action_page.php">
                                         <div class="container">
                                             <label for="uname"><b>Username</b></label>
-                                            <input type="text" placeholder="Enter Username" name="uname" required>
+                                            <input type="text" placeholder="Enter Username" class="login_text" name="uname" required>
                                             <label for="psw"><b>Password</b></label>
-                                            <input type="password" placeholder="Enter Password" name="psw" required>
+                                            <input type="password" placeholder="Enter Password" name="psw" class="login_text" required>
                                             <button type="submit" class="btn btn-warning" id="clickLogin">  Login  </button>
                                             <label>
                                             <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -94,7 +98,7 @@
                                                 <button type="submit" class="btn btn-warning" id="clickSignUp">Sign Up</button>
                                             </div>
                                             <div class="container">
-                                                <button type="button" class="btn btn-danger" id="canBut">Cancel</button>
+                                                <button type="button" class="btn btn-danger" id="canBut2">Cancel</button>
                                             </div> 
                                         </div>
                                     </form>                                        
@@ -135,24 +139,15 @@
                         </ul>
 <!-- restaurant Search form button YR-->
                         <form  id="nameSubmit" class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Restaurant Name" aria-label="Search" id="restaurant">
-<<<<<<< HEAD
-                                <button class="btn btn-warning" type="submit"><a href="search.html">Search</a></button>
-                        </form>
-=======
+                                <input class="form-control mr-sm-2" type="search" placeholder="Restaurant Name" aria-label="Search" id="restaurantSearch">
                         </form>
                                                         <button class="btn btn-warning" id="search_btnSearch">Search</button>
 
->>>>>>> 67fdae8cf1d9d838819a11f1e36f9d829db9a9b6
 <!-- location search form button YR-->                    
                         &nbsp;&nbsp;&nbsp;
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Location" aria-label="Search" id="location">
-<<<<<<< HEAD
-                            <button class="btn btn-warning" type="submit"><a href="search.html">Location</a></button>
-=======
                             <button class="btn btn-warning" type="button"><a href="search.html">Location</a></button>
->>>>>>> 67fdae8cf1d9d838819a11f1e36f9d829db9a9b6
                         </form>
                     </div>
                 </nav>
@@ -168,15 +163,9 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="row">
-<<<<<<< HEAD
-                    <div class="col-md-12">
-                        <span><div id="map" alt="place holder"> </div></span>
-                    </div>
-=======
                     <div class="col-md-12"></div>
-                    <span><iframe width="100%" height="100%" id="iframemap class="iframemap" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3VuJ-nMmwokRURNpxFATYEE&key=AIzaSyD6YVIuEd-kLyPvEHqlevxoet8_Bk5TIQE" allowfullscreen></iframe></span>
+                    <span><iframe width="100%" height="100%" id="iframemap" class="iframemap" frameborder="0" style="border:0" src="" allowfullscreen="allowfullscreen"></iframe></span>
                 </div>
->>>>>>> 67fdae8cf1d9d838819a11f1e36f9d829db9a9b6
                 </div>
 <!-- I am puting this space for the distance markers but I'm commenting them out so it doesnt appear on the screen till we get it to work YR -->
                 <!-- <span><div id="distanceMarker"> Place Distance Marker here</div></span> -->
@@ -195,35 +184,19 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <span><div id="gradeId" alt="Grading Letter"></div><img src="assets/images/a.png" width="50px"></span>
-<<<<<<< HEAD
-                                        <h1 class="modal-title" id="mapModalLabel"><span><div id="restaurantName" style="color:#ff8a00">Restaurant Name</div></span> </h1>  
-=======
+                                        <span><div id="gradeIdM" alt="Grading Letter"></div><img src="assets/images/a.png" width="50px"></span>
                                         <h1 class="modal-title" id="mapModalLabel"><span><div id="restaurantNameP" style="color:#ff8a00">Restaurant Name</div></span> </h1>  
->>>>>>> 67fdae8cf1d9d838819a11f1e36f9d829db9a9b6
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>  
                                     </div>
                                     <div class="modal-body">    
-<<<<<<< HEAD
-                                        <span><div id="restaurantInfo"><h5>Details of the restaurant and type of food etc </h5></div></span>
-                                        <span><div id="restaurantRating"><p>Rating </p></div></span>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <iframe width="800" height="450" frameborder="0" style="border:0">
-                                            <span><div id="map" alt="place holder"> </div></span>
-                                        </iframe>
-                                    </div>                         
-=======
-                                        <span><div id="restaurantInfo"><h5 id="restaurantInfoH5">Details of the restaurant and type of food etc </h5></div></span>
-                                        <span><div id="restaurantRating"><p id="ratingPM">Rating </p></div></span>  <link width="800" height="450" frameborder="0" style="border:0" href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-                                        <iframe width="465" height="600" frameborder="0" style="border:0"
-                                        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3VuJ-nMmwokRURNpxFATYEE&key=AIzaSyD6YVIuEd-kLyPvEHqlevxoet8_Bk5TIQE" allowfullscreen>
-                                    </iframe>
+                                        <span><div><h5 id="restaurantInfoH5">Details of the restaurant and type of food etc </h5></div></span>
+                                        <span><div><p id="ratingPM">Rating </p></div></span>  <link width="800" height="450" frameborder="0" style="border:0" href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+                                        <span><iframe r width="100%" height="100%" id="iframemap2" class="iframemap" frameborder="0" style="border:0" src="" allowfullscreen="allowfullscreen"></iframe></span>
+
                                     </div>
                                                  
->>>>>>> 67fdae8cf1d9d838819a11f1e36f9d829db9a9b6
                                 </div>  
                             </div>
                         </div>
@@ -233,19 +206,18 @@
 <!-- Columns for restaurant's info      YR -->
             <div class="col-md-5">
                 <span class="content">
-                    <span><div id="restaurantName" style="color:#ff8a00"><h3 id="restaurantNameH3">Restaurant Name</h3></div></span>
-                    <span><div id="restaurantInfo" ><p id="restaurantInfoP">Details of the restaurant and type of food etc </p></div></span>
-                    <span><div id="restaurantRating"><p id="rating" >Rating</p></div></span>
+                    <span><div style="color:#ff8a00"><h3 id="restaurantNameH3">Restaurant Name</h3></div></span>
+                    <span><div><p id="restaurantInfoP">Details of the restaurant and type of food etc </p></div></span>
+                    <span><div><p id="rating" >Rating</p></div></span>
                 </span>
             </div>
+
 <!-- Columns for grading letter     YR -->            
             <div class="col-md-3">
-                <span><div id="gradeId" alt="Grading Letter"><img src="assets/images/a.png" width="100px"></div></span>
+                <span><div id="gradeId2" alt="Grading Letter"><img src="assets/images/a.png" width="100px"></div></span>
             </div>
-        </div>            
+        </div> 
     </div>
-
-            
 <!-- Page Content ends YR-->
 <!-- TEMPORARY FIX FOR SPACING -->
 <br>
@@ -258,13 +230,11 @@
 <br>
 <br>
 <!-- Place footer inside here -->
-
 </br>
 </br>
 </br>
-
-
 <footer>
+
         <div class="wrapper" id="footerSetUp">    
             <div class="footerInfo">  
                 <p> Your Premium Restaurant Finder </p>
@@ -280,14 +250,11 @@
                 </ul>
             </div>
         </div>
-    </footer>
-<!-- Footer ends -->
-<script src="assets/javascript/app_newcodebase.js"></script>
-
+    </footer>  
+    <!-- Footer ends -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-
 <script>
   // Initialize Firebase
   var config = {
@@ -300,5 +267,17 @@
   };
   firebase.initializeApp(config);
 </script>
+
+<!-- 
+    for the future
+    <div id="map"></div>
+    <script>
+      var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {place.place, lng: 150.644},
+          zoom: 8
+        });
+    </script> -->
+
 </body>
 </html>

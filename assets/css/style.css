@@ -63,6 +63,11 @@ body {
     margin: 0;
     padding: 0;
 }
+.login_text,
+text
+ {
+  width:100%;
+}
 
 /* YR */
 /* Code for Main page */
@@ -94,17 +99,6 @@ body {
     margin-bottom: auto; 
     box-shadow: 20px 20px 40px rgb(0, 0, 0);
      
-}
-
-/* Sign In Button & Page */
-#button {
-    width: 200px;
-    font-size: 25px;
-    position:absolute;
-    transition: .5s ease;
-    right: 25px;
-    top: 90px;
-    
 }
 
 a{
@@ -181,7 +175,6 @@ margin-bottom: 40px;
 *   {
     margin: 0;
     padding: 0;
-    
     }
     .aboutUs {
     overflow: hidden;
@@ -233,7 +226,10 @@ margin-bottom: 40px;
   }
 
   /* YR */
-  input[type=text], input[type=password] {
+  input[type=text]:focus, 
+  input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -241,12 +237,6 @@ margin-bottom: 40px;
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-
-  input[type=text]:focus, input[type=password]:focus{
-    background-color: #ddd;
-    outline: none;
-  }
-
   /* YR */
   hr {
     border: 1px solid #f1f1f1;
@@ -262,8 +252,10 @@ margin-bottom: 40px;
   }
   
 /* Eugene's code */
-#inputId[type=text] {
-    width: 600px;
+input[type=text],
+input[type=password]
+ {
+    width: 100%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -373,28 +365,8 @@ margin-bottom: 40px;
         z-index: -1;
         position: absolute;
         width:100%;
-        
-
         /* opacity: .9; */
       }
-    /* YR */
-    #zipCrunchLogoMain {
-        padding: 10px;
-        width: 400px;
-        float: left;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;        
-    }
-    #zipCrunchLogo {
-        width: 400px;
-        float: left;
-    }
-   
-  }
-
     @media screen and (max-width: 640px) {
   
         body {
