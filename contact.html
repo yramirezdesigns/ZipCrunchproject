@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6YVIuEd-kLyPvEHqlevxoet8_Bk5TIQE&libraries=places"></script>
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="assets/javascript/app.js"></script>
+     <script src="assets/javascript/email.js"></script>
+     <script src="assets/javascript/jquery.geocomplete.js"></script>
+    <title>ZipCrunch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron" id="header">
+    <!-- Log in Button Form  for login YR-->
+        <!-- Button trigger login modal YR-->
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#loginModal" id="loginBut">
+                            Login 
+                        </button>
+        <!-- Login Modal YR-->
+                        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="loginModalLabel">Login Form </h5> 
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>  
+                                    </div>
+                                    <div class="modal-body">       
+                                        <form action="/action_page.php">
+                                            <div class="container">
+                                                <label for="uname"><b>Username</b></label>
+                                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                                <label for="psw"><b>Password</b></label>
+                                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                                <button type="submit" class="btn btn-warning" id="clickLogin">  Login  </button>
+                                                <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                                </label>
+                                            </div>
+                                            <div class="container">
+                                                <button type="button" class="btn btn-danger" id="canBut">Cancel</button>
+                                                <span class="psw">Forgot <a href="#">password?</a></span>
+                                            </div>   
+                                        </form>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+    <!-- Sign up Button Form YR-->
+        <!-- Button trigger sign up modal YR-->
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#signupModal" id="signUpButton">
+                            Sign up 
+                        </button>
+        <!-- sign up Modal YR-->
+                        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">          
+                                        <form action="/action_page.php">
+                                            <div class="container">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                <h4>Sign Up With ZipCrunch</h4>
+                                                <hr>
+                                                <label for="email"><b>Email</b></label>
+                                                <input type="text" placeholder="Enter Email" name="email" required>
+                                                <label for="psw"><b>Password</b></label>
+                                                <input type="password" placeholder="Enter Password" name="psw" required>                                        
+                                                <label for="psw-repeat"><b>Repeat Password</b></label>
+                                                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>                                        
+                                                <label>
+                                                  <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                                                </label>
+                                                <p>By creating an account you agree to ZipCrunch's <a href="#" style="color:#ff8a00">Terms & Privacy</a>.</p>                                   
+                                                <div class="container">
+                                                    <button type="submit" class="btn btn-warning" id="clickSignUp">Sign Up</button>
+                                                </div>
+                                                <div class="container">
+                                                    <button type="button" class="btn btn-danger" id="canBut">Cancel</button>
+                                                </div> 
+                                            </div>
+                                        </form>                                        
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+    <!-- Site logo  YR-->
+                                <a href="search.html"><img src="assets/images/ZipCrunchLOGO.png" alt="Zip Crunch" id="zipCrunchLogo"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- Nav bar YR-->
+            <div class="row" id="navBar"> 
+                <div class="col-md-12"> 
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/ZipCrunchLOGO.png" alt="Zip Crunch" id="zipCrunchLogo2"></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="search.html">ZipCrunch</a>
+                                        <a class="dropdown-item" href="contact.html" id="active">Contact Us</a>
+                                        <a class="dropdown-item" href="about.html">About ZipCrunch</a>
+                                        <a class="dropdown-item" href="terms.html">Terms of Service</a>
+                                        <a class="dropdown-item" href="support.html">Support ZipCrunch</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="advertise.html">Advertise on ZipCrunch</a>
+                                    </div>
+                                </li>
+                            </ul>
+    <!-- restaurant Search form button YR-->
+                            <form  id="nameSubmit" class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Restaurant Name" aria-label="Search" id="restaurant">
+                                    <button class="btn btn-warning" type="submit"><a href="search.html">Search</a></button>
+                            </form>
+    <!-- location search form button YR-->                    
+                            &nbsp;&nbsp;&nbsp;
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Location" aria-label="Search" id="location">
+                                <button class="btn btn-warning" type="submit"><a href="search.html">Location</a></button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div> 
+        </div>
+        </br>
+    <!-- This is where the header and nav bar ends        YR-->  
+<!-- THis is where all the page content goes -->
+        <div class="container">
+            <div class="row">                  
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-6">
+                    <h3 class="text-left" id="title">CONTACT US</h3>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>              
+            </div>   
+                <div class="col-sm- slideanim">
+                    <!-- <form action="mailto:yramirezdesigns@gmail.com" method="POST"> -->
+                            <form action="https://formspree.io/yramirezdesigns@gmail.com" method="POST">
+                                <!-- <input type="text" name="name">
+                                <input type="email" name="_replyto">
+                                <input type="submit" value="Send">
+                              </form> -->
+                        <div class="row">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                            </div>
+                            <div class="col-sm-3">
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-sm-3">
+                                </div>
+                             <div class="col-sm-6 form-group">
+                                 <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                             </div>
+                             <div class="col-sm-3">
+                            </div>
+                        </div>    
+                        <div class="row">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-6 form-group">                                
+                                <button class="btn btn-warning" type="submit" id="submit">Send it</button>  
+                            </div>
+                            <div class="col-sm-3">
+                            </div>
+                        </div>   
+                        <br/> 
+                    </form>
+                </div>          
+            </div>
+        </div>
+           
+<!-- Page Content ends -->
+
+<!-- Place footer inside here -->
+</br>
+</br>
+</br>
+
+
+<footer>
+        <div class="wrapper" id="footerSetUp">    
+            <div class="footerInfo">  
+                <p> Your Premium Restaurant Finder </p>
+                <p> &copy: 2019 By ZipCrunch <p></p>
+            </div>
+            <div>
+                <ul id="footList">
+                <li class="footer"><i class=" fa fa-facebook-official" aria-hidden="true"></i>
+                <li class="footer"><i class="fa fa-instagram" aria-hidden="true"></i>
+                <li class="footer"><i class="fa fa-codepen" aria-hidden="true"></i>
+                <li class="footer"><i class="fa fa-github" aria-hidden="true"></i>
+                <li class="footer"><i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- Footer ends -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- I'm not sure what this is  below, but it's showing up on the page YR -->
+<!-- async defer></script> -->
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6YVIuEd-kLyPvEHqlevxoet8_Bk5TIQE&libraries=places"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/jquery.geocomplete.js"></script>
+    <title>ZipCrunch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<!-- Shouldn't this cold be in the body or the header? YR -->
+    <!-- wip -->
+    <form class="hiddenform">
+    Latitude:   <input class="hiddenform" id="lat" name="lat" type="text" value="">
+    Longitude:  <input class="hiddenform" id="lng" name="lng" type="text" value="">
+    Address:    <input class="hiddenform" id="adrss" name="formatted_address" type="text" value="">
+  </form>
+
+<body>
+
+<!-- This is the code for the carousel (Background images) YR -->
+    <div id="carouselExaSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="assets/images/D1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="assets/images/D2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="assets/images/D3.jpg" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="assets/images/D4.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/D5.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/D6.jpg" alt="Third slide">
+                </div>
+            </div>
+        </div>
+<!-- This is the div that holds the buttons that link to login modal/ sign up modal/search/location YR  -->
+    <div id="mainSearch">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+<!-- Log in Button Form YR -->
+    <!-- Button trigger login modal YR-->
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#loginModal" id="loginBut">
+                        Login 
+                    </button>
+<!-- login Modal YR-->
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModalLabel">Login Form </h5> 
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>  
+                                </div>
+                                <div class="modal-body">       
+                                    <form action="/action_page.php">
+                                        <div class="container">
+                                            <label for="uname"><b>Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" required>
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>
+                                            <button type="submit" class="btn btn-warning" id="clickLogin">  Login  </button>
+                                            <label>
+                                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                                            </label>
+                                        </div>
+                                        <div class="container">
+                                            <button type="button" class="btn btn-danger" id="canBut">Cancel</button>
+                                            <span class="psw">Forgot <a href="#">password?</a></span>
+                                        </div>   
+                                    </form>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>               
+<!-- Sign up Button Form -->
+        <!-- Button trigger sign up modal -->
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#signupModal" id="signUpButton">
+                        Sign up 
+                    </button>
+        <!-- sign up Modal -->
+                    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">          
+                                    <form action="/action_page.php">
+                                        <div class="container">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4>Sign Up With ZipCrunch</h4>
+                                            <hr>
+                                            <label for="email"><b>Email</b></label>
+                                            <input type="text" placeholder="Enter Email" name="email" required>
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>                                        
+                                            <label for="psw-repeat"><b>Repeat Password</b></label>
+                                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>                                        
+                                            <label>
+                                              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                                            </label>
+                                            <p>By creating an account you agree to ZipCrunch's <a href="#" style="color:#ff8a00">Terms & Privacy</a>.</p>                                   
+                                            <div class="container">
+                                                <button type="submit" class="btn btn-warning" id="clickSignUp">Sign Up</button>
+                                            </div>
+                                            <div class="container">
+                                                <button type="button" class="btn btn-danger" id="canBut">Cancel</button>
+                                            </div> 
+                                        </div>
+                                    </form>                                        
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+            <!-- This the logo YR -->
+                    <a href="search.html"><img src="assets/images/ZipCrunchLOGO.png" alt="Zip Crunch" id="zipCrunchLogoMain"> </a>      
+                </div>
+            </div>
+
+            <div class="row" id="navBar1">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">               
+                     <!-- This is the search form     YR   -->
+                     <form  id="nameSubmit" class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Restaurant Name" aria-label="Search" id="restaurant">
+                            <button class="btn btn-warning" type="button" id="index_button_search">Search</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <!-- This is the form to enter the location YR-->
+                    <form class="form-inline my-2 my-lg-0" id="locationForm">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Location" aria-label="Search" id="location">
+                            <button class="btn btn-warning" type="submit"><a href="search.html">Location</a></button>
+                        </form>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+        </div>
+    </div>
+  
+<!-- Shouldn't this div be in the search.html page? YR -->
+<!-- search only works when map is loaded so hiding it for now -->
+<script>
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+/* Code for all pages */
+/* html{
+    height: 1000px;
+} */
+
+
+/* Header  */
+#button2{
+   position: absolute;
+   top: 20;
+   margin: auto;
+}
+/* YR */
+#header {
+    background-color:#f9f7ed;
+    position: relative;
+    height: 185px;
+    padding-left: 1%;
+    padding-top: .5%;
+
+}
+/* YR */
+#zipCrunchLogo {
+    float: center;
+    padding: 1%;
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* YR */
+#zipCrunchLogo2 {  
+    width: 100px;
+}
+/* YR */
+#gradId {
+  width: 50px;
+}
+
+/* YR */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Please leave your name so we know who is talking YR */
+
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+ 
+#map {
+    height: 100%;
+}
+
+
+/* Optional: Makes the sample page fill the window. */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* YR */
+/* Code for Main page */
+/* #mainPage {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../images/D1.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
+
+} */
+/* YR */
+#carouselExaSlidesOnly {
+    z-index: -1;
+    position: absolute;
+    width:100%;
+    /* opacity: .9; */
+  
+  
+  }
+/* YR */
+#zipCrunchLogoMain {
+    padding: 100px;
+    width: 1000px;
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto; 
+    box-shadow: 20px 20px 40px rgb(0, 0, 0);
+     
+}
+
+/* Sign In Button & Page */
+#button {
+    width: 200px;
+    font-size: 25px;
+    position:absolute;
+    transition: .5s ease;
+    right: 25px;
+    top: 90px;
+    
+}
+
+a{
+    color: white;
+}
+
+#button1{
+    width: 200px;
+    font-size: 25px;
+    position:absolute;
+    transition: .5s ease;
+    right: 25px;
+    top: 50px;
+}
+a1 {
+    color: white;
+}
+#searchForm {
+width: 600px;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+background-color: white;
+background-image: url('searchicon.png');
+background-position: 10px 10px; 
+background-repeat: no-repeat;
+padding: 12px 20px 12px 40px;
+-webkit-transition: width 0.4s ease-in-out;
+transition: width 0.4s ease-in-out;
+}   
+*   {
+    margin: 0;
+    padding: 0;
+}
+.aboutUs {
+overflow: hidden;
+text-align: center;
+padding: 60px;
+}
+.aboutUs h1{
+text-transform: uppercase;
+margin-bottom: 60px;
+color:white;
+font-size: 40 px;
+}
+.border {
+    display: block;
+    margin:auto;
+    width:200px;
+    height: 3px;
+    margin-bottom: 40px;
+}
+.photos {
+margin-bottom: 40px;
+}
+.photos a{
+    display: inline-block;
+    margin: 0 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.photos a img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4 all;
+}
+.photos a:hover > img{
+    filter:none;
+}
+
+*   {
+    margin: 0;
+    padding: 0;
+    
+    }
+    .aboutUs {
+    overflow: hidden;
+    text-align: center;
+    padding: 60px;
+    }
+    .aboutUs h1{
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 40px;
+    }
+    .border {
+        display:block;
+        margin: auto; 
+        width: 160px;
+        height: 3px; 
+        margin-bottom: 40px;
+    }
+    .aboutUs a{
+    display: inline-block;
+
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* YR */
+  #active {
+    background-color: #ff8a00;
+    color: #f9f7ed;
+  }
+  
+  /* YR */
+  #title {
+    color: #ff8a00;
+  }
+
+ 
+/* YR */
+  button {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+  }
+  /* YR */
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* YR */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type=text]:focus, input[type=password]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* YR */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+ /* YR */
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+/* Eugene's code */
+#inputId[type=text] {
+    width: 600px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    }
+    .formexample button{
+    float:leftl;
+    width:20%;
+    padding: 10px;
+    background:#2196F3;
+    color:white;
+    font-size: 17px;
+    border: 1 px solid grey;
+    border-left: none; 
+    cursor: pointer;
+    }
+    
+    footer  {
+    font-family: Source Sans Pro;
+    background: linear-gradient(-45deg, rgb(255, 191, 0), rgb(228, 119, 22), rgb(255, 234, 0), rgb(213, 118, 35));
+    animation: Gradient 15s ease ininite;
+    /* position: sticky; */
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        /* width: 320px;
+        height: 50%; */
+        color: #fff;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 20px;
+    padding: 20px;
+    }
+    
+    @-webkit-keyframes Gradient {
+    0%  {
+       background-position: 0% 50%
+    }
+    50% {
+       background-position: 100% 50%
+    }
+    100%    {
+       background-position: 0% 50%
+    }
+    }
+    /* h1{
+    font-weight:lighter;
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 0;
+    } */
+  
+
+    .copyFont {
+        font-size: 10px;
+        padding: 5px;
+        text-align: center;
+    }
+    .media  {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-53%, -50%);
+    }
+    /* #footerSetUp   */
+    .footer {
+    list-style: none;
+    margin: 10px 30px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px 20px;
+    color: #fff; 
+    border: 1px; 
+    /* solid: #fff; */
+    border-radius: 50%;
+    transition: .5s;
+    }
+    /* #footerSetUp */
+    .footer:hover    {
+    color: hsl(28, 100%, 50%);
+    border: 1px solid #ff6200;
+    transition: .5s;
+    }
+/* ---------- */
+
+
+
+
+
+  /* YR */
+  /* Change styles for span and cancel button on extra small screens */
+
+  @media screen and (max-width: 980px) {
+    body {
+      width: 980px;
+    }
+    #carouselExaSlidesOnly {
+        z-index: -1;
+        position: absolute;
+        width:100%;
+        
+
+        /* opacity: .9; */
+      }
+    /* YR */
+    #zipCrunchLogoMain {
+        padding: 10px;
+        width: 400px;
+        float: left;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;        
+    }
+    #zipCrunchLogo {
+        width: 400px;
+        float: left;
+    }
+   
+  }
+
+    @media screen and (max-width: 640px) {
+  
+        body {
+          width: 640px;
+        }
+        #carouselExaSlidesOnly {
+            z-index: -1;
+            position: absolute;
+            width:100%;
+    
+            /* opacity: .9; */
+          }
+        /* YR */
+        #zipCrunchLogoMain {
+            padding: 8px;
+            width: 300px;
+            float: left;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;    
+        }
+
+        #zipCrunchLogo {
+            width: 300px;
+            float: left;
+        }
+    }
+
+    
+
+    @media screen and (max-width: 300px) {
+  
+        body {
+          width: 360px;
+        }
+        #carouselExaSlidesOnly {
+            z-index: -1;
+            position: relative; 
+            top: 0px;
+            width: 100%;
+    
+            /* opacity: .9; */
+          }
+        /* YR */
+        #zipCrunchLogoMain {
+            position: relative;
+            top: 200px;
+            padding: 6px;
+            width: 200px;
+            float: left;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;    
+        }
+        #zipCrunchLogo {
+            position: absolute;
+            top: 20px;
+            padding: 6px;
+            width: 200px;
+            float: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;  
+        }
+
+        
+        /* #nameSubmit{
+            position: absolute;
+            top: 300px;
+        } */
+
+        /* #locationForm{
+            position: absolute;
+            top: 300px;
+        } */
+        #loginBut{
+            float: left;
+            position: relative;
+            top: 2px;
+        }
+        #signUpButton{
+            float: left;
+            position: absolute;
+            top: 2px;
+        }
+        
+
+    
+    span.psw {
+       display: block;
+       float: none;
+
+    margin: 0 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+    }
+    aboutUs a img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4 all;
+    }
+    .aboutUs a:hoover > img{
+    filter: nonel
+    }
+    .section {
+    width: 600px;
+    margin: auto;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    height: 0;
+    overflow: hidden;
+    }
+
+    /* This code is giving problems. I'm not sure what it is for YR */
+    /* .section: target {
+    heightL: auto;
+    } */
+
+    .name {
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    }
+
+/* Sign In Button & Page */
+#button {
+    width: 200px;
+    font-size: 25px;
+    position:absolute;
+    transition: .5s ease;
+    right: 25px;
+    top: 90px;
+    
+}
+
+a {
+    color: white;
+}
+
+#button1 {
+    width: 200px;
+    font-size: 25px;
+    position:absolute;
+    transition: .5s ease;
+    right: 25px;
+    top: 50px;
+}
+
+a1 {
+    color: white;
+}
+  }
